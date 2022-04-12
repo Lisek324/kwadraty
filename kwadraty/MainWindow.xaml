@@ -1,0 +1,95 @@
+﻿<Window x:Class="kwadraty.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kwadraty"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" >
+            <ListBoxItem Background="Aqua">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox1" VerticalAlignment="Center" Checked="Checkbox1_Checked"></CheckBox>
+                    <Image Source="/Images/1408618026_skullseedpod4-768x550.jpg" Height="30px"></Image>
+                    <TextBlock Text="Małpia twarz" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Background="BurlyWood">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox2" VerticalAlignment="Center" Checked="Checkbox2_Checked"></CheckBox>
+                    <Image Source="/Images/1-768x576.jpg" Height="30px"></Image>
+                    <TextBlock Text="Kąpiel całolistna"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Background="DarkSeaGreen">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox3" VerticalAlignment="Center" Checked="Checkbox3_Checked"></CheckBox>
+                    <Image Source="/Images/IMG_5221w-1024x768-768x546.jpg" Height="30px"></Image>
+                    <TextBlock Text="Ćma orchidea"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Background="Beige">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox4" VerticalAlignment="Center" Checked="Checkbox4_Checked"></CheckBox>
+                    <Image Source="Images/Orchid_Phalaenopsis_hybrid-768x503.jpg" Height="30px"></Image>
+                    <TextBlock Text="Gnijący Kwiat"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Background="Tomato">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox5" VerticalAlignment="Center" Checked="Checkbox5_Checked"></CheckBox>
+                    <Image Source="Images/915-768x993.jpg" Height="30px"></Image>
+                    <TextBlock Text="Podzniemna roślina"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Background="GreenYellow">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name="Checkbox6" VerticalAlignment="Center" Checked="Checkbox6_Checked"></CheckBox>
+                    <Image Source="Images/Ophrys_apifera_flower-768x576.jpg" Height="30px"></Image>
+                    <TextBlock Text="Owinięte niemowle"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+
+        <Rectangle  Width="75" Height="75" Fill="Aqua" Stroke="Salmon" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Name="Rectangle1"/>
+        <Slider Width="50" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider1"></Slider>
+        <ScrollBar Grid.Row="1" Height="50px" HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
+
+        <Rectangle Width="75" Height="75" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
+        <Slider Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="1" Height="50px" HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
+
+        <Rectangle Grid.Column="2" Grid.Row="1" Width="75" Height="75" Fill="DarkSeaGreen" Stroke="Gold" Name="Rectangle3"/>
+        <Slider Width="50" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider3"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="2" Height="50px" HorizontalAlignment="Right" Name="Scroll3"></ScrollBar>
+
+        <Rectangle Grid.Column="3" Grid.Row="1" Width="75" Height="75" Fill="Beige" Stroke="Blue" Name="Rectangle4"/>
+        <Slider Width="50" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider4"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="3" Height="50px" HorizontalAlignment="Right" Name="Scroll4"></ScrollBar>
+
+        <Rectangle Grid.Column="4" Grid.Row="1" Width="75" Height="75" Fill="Tomato" Stroke="Red" Name="Rectangle5"/>
+        <Slider Width="50" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider5"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="4" Height="50px" HorizontalAlignment="Right" Name="Scroll5"></ScrollBar>
+
+        <Rectangle Grid.Column="5" Grid.Row="1" Width="75" Height="75" Fill="GreenYellow" Stroke="Green" Name="Rectangle6"/>
+        <Slider Width="50" Grid.Row="1" Grid.Column="5" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider6"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="5" Height="50px" HorizontalAlignment="Right" Scroll="6"></ScrollBar>
+        
+        <ProgressBar Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,5,5,5" Height="25px"></ProgressBar>
+    </Grid>
+</Window>
