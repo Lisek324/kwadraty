@@ -25,9 +25,24 @@ namespace kwadraty
             InitializeComponent();
         }
 
+
+
         private void Checkbox1_Checked(object sender, RoutedEventArgs e)
         {
 
+            if (Checkbox1.IsChecked == true)
+            {
+                Rectangle1.Visibility = Visibility.Visible;
+                Slider1.Visibility = Visibility.Visible;
+                Scroll1.Visibility = Visibility.Visible;
+            }
+            else if (Checkbox1.IsChecked == false)
+            {
+
+                Rectangle1.Visibility = Visibility.Hidden;
+                Slider1.Visibility = Visibility.Hidden;
+                Scroll1.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Checkbox2_Checked(object sender, RoutedEventArgs e)
@@ -54,5 +69,13 @@ namespace kwadraty
         {
 
         }
+
+        private void Scroll_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }
+
+
+

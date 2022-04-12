@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:kwadraty"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name="g">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -21,10 +21,10 @@
             <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" >
+        <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Name="lstbx">
             <ListBoxItem Background="Aqua">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox1" VerticalAlignment="Center" Checked="Checkbox1_Checked"></CheckBox>
+                    <CheckBox Name="Checkbox1" VerticalAlignment="Center"  Click="Checkbox1_Checked"></CheckBox>
                     <Image Source="/Images/1408618026_skullseedpod4-768x550.jpg" Height="30px"></Image>
                     <TextBlock Text="Małpia twarz" VerticalAlignment="Center"/>
                 </StackPanel>
@@ -67,28 +67,28 @@
         </ListBox>
 
         <Rectangle  Width="75" Height="75" Fill="Aqua" Stroke="Salmon" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Name="Rectangle1"/>
-        <Slider Width="50" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider1"></Slider>
-        <ScrollBar Grid.Row="1" Height="50px" HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider1"></Slider>
+        <ScrollBar Grid.Row="1" Height="100px" HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
 
         <Rectangle Width="75" Height="75" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
-        <Slider Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
-        <ScrollBar Grid.Row="1" Grid.Column="1" Height="50px" HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="1" Height="100px"  HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
 
         <Rectangle Grid.Column="2" Grid.Row="1" Width="75" Height="75" Fill="DarkSeaGreen" Stroke="Gold" Name="Rectangle3"/>
-        <Slider Width="50" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider3"></Slider>
-        <ScrollBar Grid.Row="1" Grid.Column="2" Height="50px" HorizontalAlignment="Right" Name="Scroll3"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider3"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="2" Height="100px"  HorizontalAlignment="Right" Name="Scroll3"></ScrollBar>
 
         <Rectangle Grid.Column="3" Grid.Row="1" Width="75" Height="75" Fill="Beige" Stroke="Blue" Name="Rectangle4"/>
-        <Slider Width="50" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider4"></Slider>
-        <ScrollBar Grid.Row="1" Grid.Column="3" Height="50px" HorizontalAlignment="Right" Name="Scroll4"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider4"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="3" Height="100px"  HorizontalAlignment="Right" Name="Scroll4"></ScrollBar>
 
         <Rectangle Grid.Column="4" Grid.Row="1" Width="75" Height="75" Fill="Tomato" Stroke="Red" Name="Rectangle5"/>
-        <Slider Width="50" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider5"></Slider>
-        <ScrollBar Grid.Row="1" Grid.Column="4" Height="50px" HorizontalAlignment="Right" Name="Scroll5"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider5"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="4" Height="100px"  HorizontalAlignment="Right" Name="Scroll5"></ScrollBar>
 
         <Rectangle Grid.Column="5" Grid.Row="1" Width="75" Height="75" Fill="GreenYellow" Stroke="Green" Name="Rectangle6"/>
-        <Slider Width="50" Grid.Row="1" Grid.Column="5" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider6"></Slider>
-        <ScrollBar Grid.Row="1" Grid.Column="5" Height="50px" HorizontalAlignment="Right" Scroll="6"></ScrollBar>
+        <Slider ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="5" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider6"></Slider>
+        <ScrollBar Grid.Row="1" Grid.Column="5" Height="100px"  HorizontalAlignment="Right" Name="Scroll6"></ScrollBar>
         
         <ProgressBar Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,5,5,5" Height="25px"></ProgressBar>
     </Grid>
