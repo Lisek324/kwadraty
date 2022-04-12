@@ -20,57 +20,47 @@ namespace kwadraty
     /// </summary>
     public partial class MainWindow : Window
     {
+        int count = 0;
         public MainWindow()
         {
             InitializeComponent();
         }
-
-
-
-        private void Checkbox1_Checked(object sender, RoutedEventArgs e)
+        private void Checkbox_Checked(object sender, RoutedEventArgs e)
         {
+            //prog.Value = 0;
 
-            if (Checkbox1.IsChecked == true)
+            foreach (CheckBox c in lstbx.Items)
             {
-                Rectangle1.Visibility = Visibility.Visible;
-                Slider1.Visibility = Visibility.Visible;
-                Scroll1.Visibility = Visibility.Visible;
-            }
-            else if (Checkbox1.IsChecked == false)
-            {
-
-                Rectangle1.Visibility = Visibility.Hidden;
-                Slider1.Visibility = Visibility.Hidden;
-                Scroll1.Visibility = Visibility.Hidden;
+                if (c.GetType() == typeof(CheckBox))
+                {
+                    prog.Value = count++;
+                }
             }
         }
-
-        private void Checkbox2_Checked(object sender, RoutedEventArgs e)
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            
+            Slider s = sender as Slider;
+            
+            switch (s.Name)
+            {
+                case "Slider1":
+                    break;
+                case "Slider2":
+                    break;
+                case "Slider3":
+                    break;
+                case "Slider4":
+                    break;
+                case "Slider5":
+                    break;
+                case "Slider6":
+                    break;
 
+            }
         }
 
-        private void Checkbox3_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Checkbox4_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Checkbox5_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Checkbox6_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Scroll_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Scroll1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }
