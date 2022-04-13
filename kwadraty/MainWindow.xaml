@@ -1,4 +1,4 @@
-﻿    <Window x:Class="kwadraty.MainWindow"
+﻿<Window x:Class="kwadraty.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -22,76 +22,71 @@
             <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Name="lstbx">
-            <ListBoxItem Background="Aqua">
+        <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Name="lstbx" SelectionMode="Multiple" SelectionChanged="lstbx_SelectionChanged">
+            <ListBoxItem Background="Aqua" Name="item1">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox1" VerticalAlignment="Center"  Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="/Images/1408618026_skullseedpod4-768x550.jpg" Height="30px"></Image>
                     <TextBlock Text="Małpia twarz" VerticalAlignment="Center"/>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem Background="BurlyWood">
+            <ListBoxItem Background="BurlyWood"  Name="item2">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox2" VerticalAlignment="Center" Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="/Images/1-768x576.jpg" Height="30px"></Image>
                     <TextBlock Text="Kąpiel całolistna"/>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem Background="DarkSeaGreen">
+            <ListBoxItem Background="DarkSeaGreen"  Name="item3">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox3" VerticalAlignment="Center" Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="/Images/IMG_5221w-1024x768-768x546.jpg" Height="30px"></Image>
                     <TextBlock Text="Ćma orchidea"/>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem Background="Beige">
+            <ListBoxItem Background="Beige"  Name="item4">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox4" VerticalAlignment="Center" Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="Images/Orchid_Phalaenopsis_hybrid-768x503.jpg" Height="30px"></Image>
                     <TextBlock Text="Gnijący Kwiat"/>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem Background="Tomato">
+            <ListBoxItem Background="Tomato"  Name="item5">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox5" VerticalAlignment="Center" Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="Images/915-768x993.jpg" Height="30px"></Image>
                     <TextBlock Text="Podzniemna roślina"/>
                 </StackPanel>
             </ListBoxItem>
-            <ListBoxItem Background="GreenYellow">
+            <ListBoxItem Background="GreenYellow"  Name="item6">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Name="Checkbox6" VerticalAlignment="Center" Checked="Checkbox_Checked"></CheckBox>
                     <Image Source="Images/Ophrys_apifera_flower-768x576.jpg" Height="30px"></Image>
                     <TextBlock Text="Owinięte niemowle"/>
                 </StackPanel>
             </ListBoxItem>
         </ListBox>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox1,Path=IsChecked,Converter={StaticResource MyCov}}" Width="75" Height="75" Fill="Aqua" Stroke="Salmon" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Name="Rectangle1"/>
-        <Slider Visibility="{Binding ElementName=Checkbox1,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" x:Name="Slider1"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox1,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged"  Grid.Row="1" Height="100px" HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
+        <Rectangle Visibility="{Binding ElementName=item1,Path=IsSelected,Converter={StaticResource MyCov}}" Width="{Binding ElementName=Slider1, Path=Value}" Height="{Binding ElementName=Scroll1, Path=Value}" Fill="Aqua" Stroke="Salmon" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Name="Rectangle1"/>
+        <Slider Visibility="{Binding ElementName=item1,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" x:Name="Slider1"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item1,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Row="1" Height="100px" Minimum="75" Maximum="175"  HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox2,Path=IsChecked,Converter={StaticResource MyCov}}" Width="75" Height="75" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
-        <Slider Visibility="{Binding ElementName=Checkbox2,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox2,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="1" Height="100px"  HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox3,Path=IsChecked,Converter={StaticResource MyCov}}" Grid.Column="2" Grid.Row="1" Width="75" Height="75" Fill="DarkSeaGreen" Stroke="Gold" Name="Rectangle3"/>
-        <Slider Visibility="{Binding ElementName=Checkbox3,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider3"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox3,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="2" Height="100px"  HorizontalAlignment="Right" Name="Scroll3"></ScrollBar>
+        <Rectangle Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Width="{Binding ElementName=Slider2, Path=Value}" Height="{Binding ElementName=Scroll2, Path=Value}" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
+        <Slider Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Grid.Row="1" Grid.Column="1" Height="100px"  HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox4,Path=IsChecked,Converter={StaticResource MyCov}}" Grid.Column="3" Grid.Row="1" Width="75" Height="75" Fill="Beige" Stroke="Blue" Name="Rectangle4"/>
-        <Slider Visibility="{Binding ElementName=Checkbox4,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider4"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox4,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="3" Height="100px"  HorizontalAlignment="Right" Name="Scroll4"></ScrollBar>
+        <Rectangle Visibility="{Binding ElementName=item3,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Column="2" Grid.Row="1" Width="{Binding ElementName=Slider3, Path=Value}" Height="{Binding ElementName=Scroll3, Path=Value}" Fill="DarkSeaGreen" Stroke="Gold" Name="Rectangle3"/>
+        <Slider Visibility="{Binding ElementName=item3,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider3"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item3,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Grid.Row="1" Grid.Column="2" Height="100px"  HorizontalAlignment="Right" Name="Scroll3"></ScrollBar>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox5,Path=IsChecked,Converter={StaticResource MyCov}}" Grid.Column="4" Grid.Row="1" Width="75" Height="75" Fill="Tomato" Stroke="Red" Name="Rectangle5"/>
-        <Slider Visibility="{Binding ElementName=Checkbox5,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider5"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox5,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="4" Height="100px"  HorizontalAlignment="Right" Name="Scroll5"></ScrollBar>
+        <Rectangle Visibility="{Binding ElementName=item4,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Column="3" Grid.Row="1" Width="{Binding ElementName=Slider4, Path=Value}" Height="{Binding ElementName=Scroll4, Path=Value}" Fill="Beige" Stroke="Blue" Name="Rectangle4"/>
+        <Slider Visibility="{Binding ElementName=item4,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider4"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item4,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Grid.Row="1" Grid.Column="3" Height="100px"  HorizontalAlignment="Right" Name="Scroll4"></ScrollBar>
 
-        <Rectangle Visibility="{Binding ElementName=Checkbox6,Path=IsChecked,Converter={StaticResource MyCov}}" Grid.Column="5" Grid.Row="1" Width="75" Height="75" Fill="GreenYellow" Stroke="Green" Name="Rectangle6"/>
-        <Slider Visibility="{Binding ElementName=Checkbox6,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Slider_ValueChanged" Width="50" Grid.Row="1" Grid.Column="5" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider6"></Slider>
-        <ScrollBar Visibility="{Binding ElementName=Checkbox6,Path=IsChecked,Converter={StaticResource MyCov}}" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="5" Height="100px"  HorizontalAlignment="Right" Name="Scroll6"></ScrollBar>
+        <Rectangle Visibility="{Binding ElementName=item5,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Column="4" Grid.Row="1" Width="{Binding ElementName=Slider5, Path=Value}" Height="{Binding ElementName=Scroll5, Path=Value}" Fill="Tomato" Stroke="Red" Name="Rectangle5"/>
+        <Slider Visibility="{Binding ElementName=item5,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider5"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item5,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" ValueChanged="Scroll1_ValueChanged" Grid.Row="1" Grid.Column="4" Height="100px"  HorizontalAlignment="Right" Name="Scroll5"></ScrollBar>
+
+        <Rectangle Visibility="{Binding ElementName=item6,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Column="5" Grid.Row="1" Width="{Binding ElementName=Slider6, Path=Value}" Height="{Binding ElementName=Scroll6, Path=Value}" Fill="GreenYellow" Stroke="Green" Name="Rectangle6"/>
+        <Slider Visibility="{Binding ElementName=item6,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" Grid.Column="5" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider6"></Slider>
+        <ScrollBar Visibility="{Binding ElementName=item6,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Grid.Row="1" Grid.Column="5" Height="100px"  HorizontalAlignment="Right" Name="Scroll6"></ScrollBar>
         
-        <ProgressBar Name="prog" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,5,5,5" Height="25px"></ProgressBar>
+        <ProgressBar Minimum="0" Maximum="6" Name="prog" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,5,5,5" Height="25px"></ProgressBar>
         <TextBlock Name="test" FontSize="10px"/>
     </Grid>
 </Window>
