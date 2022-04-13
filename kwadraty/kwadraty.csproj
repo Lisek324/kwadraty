@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\1-768x576.jpg" />
+    <None Remove="Images\1408618026_skullseedpod4-768x550.jpg" />
+    <None Remove="Images\915-768x993.jpg" />
+    <None Remove="Images\IMG_5221w-1024x768-768x546.jpg" />
+    <None Remove="Images\Ophrys_apifera_flower-768x576.jpg" />
+    <None Remove="Images\Orchid_Phalaenopsis_hybrid-768x503.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\1-768x576.jpg" />
+    <Resource Include="Images\1408618026_skullseedpod4-768x550.jpg" />
+    <Resource Include="Images\915-768x993.jpg" />
+    <Resource Include="Images\IMG_5221w-1024x768-768x546.jpg" />
+    <Resource Include="Images\Ophrys_apifera_flower-768x576.jpg" />
+    <Resource Include="Images\Orchid_Phalaenopsis_hybrid-768x503.jpg" />
   </ItemGroup>
 
 </Project>

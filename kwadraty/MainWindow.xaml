@@ -55,7 +55,7 @@
             </ListBoxItem>
             <ListBoxItem Background="GreenYellow"  Name="item6">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Images/Ophrys_apifera_flower-768x576.jpg" Height="30px"></Image>
+                    <Image Source="/Images/Ophrys_apifera_flower-768x576.jpg" Height="30px"/>
                     <TextBlock Text="Owinięte niemowle"/>
                 </StackPanel>
             </ListBoxItem>
@@ -66,7 +66,7 @@
         <ScrollBar Visibility="{Binding ElementName=item1,Path=IsSelected,Converter={StaticResource MyCov}}" Grid.Row="1" Height="100px" Minimum="75" Maximum="175"  HorizontalAlignment="Right" Name="Scroll1"></ScrollBar>
 
 
-        <Rectangle Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Width="{Binding ElementName=Slider2, Path=Value}" Height="{Binding ElementName=Scroll2, Path=Value}" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
+        <Rectangle Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Width="{Binding ElementName=Slider2, Path=Value}" Height="{Binding ElementName=Scroll1, Path=Value}" Fill="BurlyWood" Stroke="Black" Grid.Column="1" Grid.Row="1" Name="Rectangle2"/>
         <Slider Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Width="50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="5,5,5,5" Name="Slider2"></Slider>
         <ScrollBar Visibility="{Binding ElementName=item2,Path=IsSelected,Converter={StaticResource MyCov}}" Minimum="75" Maximum="175" Grid.Row="1" Grid.Column="1" Height="100px"  HorizontalAlignment="Right" Name="Scroll2"></ScrollBar>
 

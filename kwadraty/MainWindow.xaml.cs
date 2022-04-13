@@ -26,12 +26,6 @@ namespace kwadraty
         {
             InitializeComponent();
         }
-
-        private void Scroll1_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-             
-        }
-
         private void lstbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             prog.Value = 0;
